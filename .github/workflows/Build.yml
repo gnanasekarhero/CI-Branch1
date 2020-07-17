@@ -17,8 +17,11 @@ jobs:
           ./sfdx-cli/install
     - name: version
       run: sfdx version
-    - name: auth
-      run: sfdx force:auth:jwt:grant --clientid ${{secrets.CONSUMER_KEY}}  --username santosh.n@servicemax.com --jwtkeyfile  ${{secrets.SERVER}}  --setdefaultdevhubusername --setalias HubOrg    
-     
+    - name: Project
+      run: sfdx force:project:create -n "Action"
+    - name: npm CI
+      working-directory: ./Action
+      run: sfdx force:org:create -f config/project-scratch-def.json -d 3 
+      
         
  
