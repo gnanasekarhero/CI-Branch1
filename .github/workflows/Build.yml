@@ -18,7 +18,7 @@ jobs:
     - name: create project
       run: sfdx force:project:create -n "ActionDX"
      - name: auth
-     run: authsfdx force:auth:jwt:grant --clientid {{CONSUMER_KEY}} --username santosh.n@servicemax.com --jwtkeyfile {{SERVER}} --setdefaultdevhubusername --setalias HubOrg    
+     run: sfdx force:auth:jwt:grant --clientid {{CONSUMER_KEY}} --username santosh.n@servicemax.com --jwtkeyfile {{SERVER}} --setdefaultdevhubusername --setalias HubOrg    
      
         
  
