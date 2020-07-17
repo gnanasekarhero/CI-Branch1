@@ -19,9 +19,9 @@ jobs:
       shell: bash
       run: 'echo ${{ secrets.ACCESS_TOKEN}} > ./SFDX_URL_STORE.txt'
     - name: 'Authenticate against dev hub'
-      uses: forcedotcom/salesforcedx-actions@master
+      uses: actions/checkout@v2 
       with:
-          args: 'force:auth:sfdxurl:store --sfdxurlfile=./SFDX_URL_STORE.txt --setalias=devhub --setdefaultdevhubusername'
+          args: sfdx:auth:sfdxurl:store --sfdxurlfile=./SFDX_URL_STORE.txt --setalias=devhub --setdefaultdevhubusername
     - name: version
       run: sfdx version
     - name: Project
