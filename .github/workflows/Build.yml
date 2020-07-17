@@ -17,7 +17,7 @@ jobs:
           ./sfdx-cli/install
    
      - name: auth
-     run: sfdx force:auth:jwt:grant --clientid {{secrets.CONSUMER_KEY}} --username santosh.n@servicemax.com --jwtkeyfile {{secrets.SERVER}} --setdefaultdevhubusername --setalias HubOrg    
+     run: sfdx force:auth:jwt:grant --clientid ${{secrets.CONSUMER_KEY}} --username santosh.n@servicemax.com --jwtkeyfile ${{secrets.SERVER}} --setdefaultdevhubusername --setalias HubOrg    
      
         
  
