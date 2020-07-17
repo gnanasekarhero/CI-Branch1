@@ -10,7 +10,7 @@ jobs:
     steps:
     - uses: actions/checkout@v2  
       with:
-          sfdx-auth-url: ${{ secrets.ACCESS.TOKEN }}   
+          sfdx-auth-url: "00D80000000M5JG!AQoAQK5AHUisfZG0hM.7Vhaf2Uczbj2KAuYBnKv7XrEHif8wlTAS0wghWSS9_CGTzRKbtJw6G_._fjbLKOobF3lfSUkG.4ra"  
     - name: Install Salesforce CLI
       run: |
           wget https://developer.salesforce.com/media/salesforce-cli/sfdx-linux-amd64.tar.xz
