@@ -17,7 +17,7 @@ jobs:
           ./sfdx-cli/install
     - name: 'Populate auth file with SFDX_URL secret'
       shell: bash
-      run: 'echo ${{ secrets.ACCESS_TOKEN}} > ./SFDX_URL_STORE.txt'
+      run: 'echo ${{secrets.CONSUMER_KEY}} > ./SFDX_URL_STORE.txt'
     - name: 'Authenticate against dev hub'
       uses: actions/checkout@v2 
       with:
