@@ -8,12 +8,12 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - uses: actions/checkout       
+    - uses: actions/checkout       
     - name: Install Salesforce CLI
-        run: |
+      run: |
           wget https://developer.salesforce.com/media/salesforce-cli/sfdx-linux-amd64.tar.xz
           mkdir sfdx-cli
           tar xJf sfdx-linux-amd64.tar.xz -C sfdx-cli --strip-components 1
           ./sfdx-cli/install
-        - name: grant
+    - name: Grant access
       run:  sfdx force:auth:jwt:grant --clientid 3MVG9CVKiXR7Ri5psrc8135mGNPLBVKHKDQWl9CimmklCr73CG31HBE55V8ciSLusbgdExf1pGhkGyWn9aLKZ --username santosh.n@servicemax.com --jwtkeyfile server.key --setdefaultdevhubusername --setalias HubOrg 
