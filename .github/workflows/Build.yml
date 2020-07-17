@@ -18,5 +18,6 @@ jobs:
     - name: create project
       run: sfdx force:project:create -n "ActionDX"
       - name: enter the folder
-        run: sh "cd ActionDX"
+        run: |
+        cd ActionDX
  
