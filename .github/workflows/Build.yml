@@ -8,7 +8,9 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    - uses: actions/checkout@v2     
+    - uses: actions/checkout@v2  
+      with:
+          sfdx-auth-url: ${{ secrets.AUTH_SECRET }}   
     - name: Install Salesforce CLI
       run: |
           wget https://developer.salesforce.com/media/salesforce-cli/sfdx-linux-amd64.tar.xz
@@ -20,9 +22,6 @@ jobs:
     - name: Project
       run: sfdx force:project:create -n "Action"
     
-    - name: auth
-      with:
-          sfdx-auth-url: ${{ secrets.ACCESS_TOKEN }}
     - name: creation
       run: sfdx force:org:create -f config/project-scratch-def.json -d 3 
       
