@@ -1,4 +1,4 @@
-name: 'sfdx'
+name: 'ACTIONGO'
 
 on: [push]
 
@@ -15,8 +15,7 @@ jobs:
           mkdir sfdx-cli
           tar xJf sfdx-linux-amd64.tar.xz -C sfdx-cli --strip-components 1
           ./sfdx-cli/install
-    - name: create project
-      run: sfdx force:project:create -n "ActionDX"
+   
      - name: auth
      run: sfdx force:auth:jwt:grant --clientid {{CONSUMER_KEY}} --username santosh.n@servicemax.com --jwtkeyfile {{SERVER}} --setdefaultdevhubusername --setalias HubOrg    
      
