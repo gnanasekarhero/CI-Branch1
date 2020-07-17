@@ -19,8 +19,11 @@ jobs:
       run: sfdx version
     - name: Project
       run: sfdx force:project:create -n "Action"
-    - name: npm CI
+    - name: Auth
       working-directory: ./Action
+      run: sfdx force:auth:jwt:grant --clientid 3MVG9CVKiXR7Ri5psrc8135mGNPLBVKHKDQWl9CimmklCr73CG31HBE55V8ciSLusbgdExf1pGhkGyWn9aLKZ --username santosh.n@servicemax.com --jwtkeyfile ${{secrets.SERVER}} --setdefaultdevhubusername --setalias HubOrg
+       
+    - name: creation
       run: sfdx force:org:create -f config/project-scratch-def.json -d 3 
       
         
