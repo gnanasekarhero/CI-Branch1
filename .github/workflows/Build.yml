@@ -19,9 +19,12 @@ jobs:
       run: sfdx version
     - name: Project
       run: sfdx force:project:create -n "Action"
-    - name: Auth
-      working-directory: ./Action
-      run: sfdx force:auth:jwt:grant --clientid ${{ secrets.CONSUMER_KEY }} --username santosh.n@servicemax.com  --jwtkeyfile ${{ secrets.SERVER }} 
+    - name: 'Populate auth file with SFDX_URL secret'
+      shell: bash
+      run: 'echo ${{ secrets.ACCESS_TOKEN }} > ./SFDX_URL_STORE.txt'
+    - name: auth
+      with:
+          sfdx-auth-url: ${{ secrets.ACCESS_TOKEN }}
     - name: creation
       run: sfdx force:org:create -f config/project-scratch-def.json -d 3 
       
