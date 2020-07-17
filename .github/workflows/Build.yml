@@ -23,7 +23,8 @@ jobs:
       run: sfdx force:project:create -n "Action"
     
     - name: creation
-      run: sfdx force:org:create -f config/project-scratch-def.json -d 3 
+      run: sfdx force:org:create -f config/project-scratch-def.json -d 3 -v santosh.n@servicemax.com -a SVMX-GITHUBACTION -d 30 
+      
       
         
  
