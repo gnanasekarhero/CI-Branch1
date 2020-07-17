@@ -17,7 +17,7 @@ jobs:
           ./sfdx-cli/install
      
     - name: 'Authenticate against dev hub'
-      run: sfdx force:auth:jwt:grant --clientid 3MVG9CVKiXR7Ri5psrc8135mGNPLBVKHKDQWl9CimmklCr73CG31HBE55V8ciSLusbgdExf1pGhkGyWn9aLKZ --username santosh.n@servicemax.com --jwtkeyfile server.key --setdefaultdevhubusername --setalias HubOrg
+      run: sfdx force:auth:jwt:grant --clientid 3MVG9CVKiXR7Ri5psrc8135mGNPLBVKHKDQWl9CimmklCr73CG31HBE55V8ciSLusbgdExf1pGhkGyWn9aLKZ --username santosh.n@servicemax.com --jwtkeyfile ./server.key --setdefaultdevhubusername --setalias HubOrg
     - name: version
       run: sfdx version
     - name: Project
