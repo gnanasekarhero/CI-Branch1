@@ -15,4 +15,5 @@ jobs:
           mkdir sfdx-cli
           tar xJf sfdx-linux-amd64.tar.xz -C sfdx-cli --strip-components 1
           ./sfdx-cli/install
-      - run:  sfdx force:auth:jwt:grant --clientid 3MVG9CVKiXR7Ri5psrc8135mGNPLBVKHKDQWl9CimmklCr73CG31HBE55V8ciSLusbgdExf1pGhkGyWn9aLKZ --username santosh.n@servicemax.com --jwtkeyfile server.key --setdefaultdevhubusername --setalias HubOrg 
+        - name: grant
+      run:  sfdx force:auth:jwt:grant --clientid 3MVG9CVKiXR7Ri5psrc8135mGNPLBVKHKDQWl9CimmklCr73CG31HBE55V8ciSLusbgdExf1pGhkGyWn9aLKZ --username santosh.n@servicemax.com --jwtkeyfile server.key --setdefaultdevhubusername --setalias HubOrg 
