@@ -21,7 +21,7 @@ jobs:
     - name: 'Authenticate against dev hub'
       uses: actions/checkout@v2 
       with:
-          args: sfdx:auth:sfdxurl:store --sfdxurlfile=./SFDX_URL_STORE.txt --setalias=devhub --setdefaultdevhubusername
+          args: sfdx force:auth:sfdxurl:store --sfdxurlfile=./SFDX_URL_STORE.txt --setalias=devhub --setdefaultdevhubusername
     - name: version
       run: sfdx version
     - name: Project
