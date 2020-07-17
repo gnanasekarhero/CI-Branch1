@@ -1,0 +1,6 @@
+# Checkout the code in the pull request
+- name: 'Checkout source code'
+  uses: actions/checkout@v1
+# ESlint
+- name: 'Lint Lightning Web Components'
+  run: npm run lint:lwc
