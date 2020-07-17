@@ -21,7 +21,7 @@ jobs:
       run: sfdx force:project:create -n "Action"
     - name: Auth
       working-directory: ./Action
-      run: sfdx force:auth:jwt:grant --clientid ${{ secrets.CONSUMER_KEY }} --username santosh.n@servicemax.com --jwtkeyfile ${{ secrets.SERVER }} 
+      run: sfdx force:auth:jwt:grant --clientid ${{ secrets.CONSUMER_KEY }} --username s${{SALESFORCE_DEVHUB_USERNAME}} --jwtkeyfile ${{ secrets.SERVER }} 
     - name: creation
       run: sfdx force:org:create -f config/project-scratch-def.json -d 3 
       
