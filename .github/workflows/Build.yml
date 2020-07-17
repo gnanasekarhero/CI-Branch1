@@ -17,7 +17,8 @@ jobs:
           ./sfdx-cli/install
     - name: create project
       run: sfdx force:project:create -n "ActionDX"
-      - name: enter the folder
-        run: |
-        cd ActionDX
+     - name: auth
+     run: authsfdx force:auth:jwt:grant --clientid {{CONSUMER_KEY}} --username santosh.n@servicemax.com --jwtkeyfile {{SERVER}} --setdefaultdevhubusername --setalias HubOrg    
+     
+        
  
