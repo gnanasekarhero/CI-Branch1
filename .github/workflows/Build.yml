@@ -18,7 +18,7 @@ jobs:
     - name: version
       run: sfdx version
     - name: auth
-      run: sfdx force:auth:jwt:grant --clientid ${{secrets.CONSUMER_KEY}}  --username santosh.n@servicemax.com --jwtkeyfile  ${{secrets.server}}  --setdefaultdevhubusername --setalias HubOrg    
+      run: sfdx force:auth:jwt:grant --clientid ${{secrets.CONSUMER_KEY}}  --username santosh.n@servicemax.com --jwtkeyfile  ${{secrets.SERVER}}  --setdefaultdevhubusername --setalias HubOrg    
      
         
  
