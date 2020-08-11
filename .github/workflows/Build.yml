@@ -17,7 +17,7 @@ jobs:
        
     - name: Authenticate DevHub
       run: |
-        echo "${SERVER}" > server.key
+        echo "${SERVER}" > ./server.key
         sfdx force:auth:jwt:grant --clientid ${{secrets.CONSUMER_KEY}} \
          --jwtkeyfile ${{secrets.SERVER}} \
          -u ${{secrets.SALESFORCE_DEVHUB_USERNAME}} \
