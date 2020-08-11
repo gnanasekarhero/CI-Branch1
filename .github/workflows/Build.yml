@@ -15,17 +15,4 @@ jobs:
           mkdir sfdx-cli
           tar xJf sfdx-linux-amd64.tar.xz -C sfdx-cli --strip-components 1
           ./sfdx-cli/install
-    - name: 'Populate auth file with SFDX_URL secret'
-      shell: bash
-      run: 'echo ${{ secrets.ACCESS_TOKEN}} > ./SFDX_URL_STORE.txt'
-    - name: 'Authenticate against dev hub'
-      uses: actions/checkout@v2 
-      with:
-          args: sfdx:auth:sfdxurl:store --sfdxurlfile=./SFDX_URL_STORE.txt --setalias=devhub --setdefaultdevhubusername
-    - name: version
-      run: sfdx version
-    - name: Project
-      run: sfdx force:project:create -n "Action"
-    
-    - name: creation
-      run: sfdx force:org:create -f config/project-scratch-def.json -d 3 -v santosh.n@servicemax.com -a SVMX-GITHUBACTION -d 30 
+   
