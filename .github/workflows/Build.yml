@@ -19,7 +19,7 @@ jobs:
       run: |
         echo "${SERVER}" > server.key
         sfdx force:auth:jwt:grant --clientid ${{secrets.CONSUMER_KEY}}  --jwtkeyfile server.key \
-          -u ${{secrets.SALESFORCE_DEVHUB_USERNAME}} --setdefaultdevhubusername -a devhub
+          -u ${{secrets.SALESFORCE_DEVHUB_USERNAME}} --setdefaultdevhubusername -a devhub --instanceurl https://sekartrailhead-dev-ed.my.salesforce.com/
       env:
         SERVER: ${{secrets.SERVER}}
         SALESFORCE_DEVHUB_USERNAME: ${{secrets.SALESFORCE_DEVHUB_USERNAME}}
