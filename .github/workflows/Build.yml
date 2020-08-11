@@ -15,12 +15,8 @@ jobs:
           mkdir sfdx-cli
           tar xJf sfdx-linux-amd64.tar.xz -C sfdx-cli --strip-components 1
           ./sfdx-cli/install
-          steps:
-    - uses: actions/checkout@master
-      if: github.event.action == 'opened' || github.event.action == 'synchronize'
-    - uses: actions/setup-node@v1
-      with:
-        node-version: '10.x'
+  
+    
 
      
         
