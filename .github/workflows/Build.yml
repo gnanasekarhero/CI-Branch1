@@ -21,6 +21,7 @@ jobs:
         sfdx force:auth:jwt:grant --clientid ${{secrets.CONSUMER_KEY}} \
          --jwtkeyfile ${{secrets.SERVER}} \
          -u ${{secrets.SALESFORCE_DEVHUB_USERNAME}} \
+          --instanceurl https://sekartrailhead-dev-ed.my.salesforce.com/ \
          --setdefaultdevhubusername \
          -a devhub
       env:
