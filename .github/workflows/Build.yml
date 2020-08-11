@@ -1,5 +1,5 @@
 #.github/workflows/main.yml
-name: Scratch org for review
+name: NewDX
 on: pull_request
 
 jobs:
