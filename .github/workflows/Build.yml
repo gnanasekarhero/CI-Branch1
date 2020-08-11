@@ -24,10 +24,9 @@ jobs:
     - name: Authenticate DevHub
       run: |
         echo "${SERVER}" > server.key
-        sfdx force:auth:jwt:grant --clientid ${{secrets.CONSUMER_KEY}}  --jwtkeyfile ${{secrets.SERVER}} \ 
-           -u "$SALESFORCE_DEVHUB_USERNAME" --setdefaultdevhubusername -a devhub
+        sfdx force:auth:jwt:grant --clientid ${{secrets.CONSUMER_KEY}}  --jwtkeyfile ${{secrets.SERVER}} -u "$SALESFORCE_DEVHUB_USERNAME" --setdefaultdevhubusername -a devhub
       env:
-        SALESFORCE_JWT_SECRET_KEY: ${{secrets.SERVER}}
+        SERVER: ${{secrets.SERVER}}
         SALESFORCE_DEVHUB_USERNAME: ${{secrets.SALESFORCE_DEVHUB_USERNAME}}
 
       
