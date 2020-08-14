@@ -17,7 +17,7 @@ jobs:
     - name: Auth
       run: |
          echo "${SERVER}" > server.key
-         sfdx force:auth:jwt:grant --clientid ${{secrets.CONSUMER_KEY}} -u sekar@trailhead.com --jwtkeyfile server.key  --setdefaultdevhubusername -a devhub --instanceurl https://sekartrailhead-dev-ed.my.salesforce.com
+         sfdx force:auth:jwt:grant --clientid ${{secrets.CONSUMER_KEY}}  --jwtkeyfile ./server.key -u sekar@trailhead.com  --setdefaultdevhubusername -a devhub --instanceurl https://sekartrailhead-dev-ed.my.salesforce.com
      
     - name: Create Project
       run: |
