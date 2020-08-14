@@ -3,17 +3,13 @@ on: [push]
 
 jobs:
   build:
-
     runs-on: ubuntu-latest
-
     steps:
-    - uses: actions/checkout@v2  
-    - name: Install Salesforce CLI
-      run: |
-          wget https://developer.salesforce.com/media/salesforce-cli/sfdx-linux-amd64.tar.xz
-          mkdir sfdx-cli
-          tar xJf sfdx-linux-amd64.tar.xz -C sfdx-cli --strip-components 1
-          ./sfdx-cli/install
+    - uses: actions/checkout@master
+      if: github.event.action == 'opened' || github.event.action == 'synchronize'
+    - uses: actions/setup-node@v1
+      with:
+        node-version: '10.x'
     - name: Install Salesforce CLI
       run: |
         npm install sfdx-cli
