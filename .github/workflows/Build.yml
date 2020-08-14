@@ -14,6 +14,11 @@ jobs:
           mkdir sfdx-cli
           tar xJf sfdx-linux-amd64.tar.xz -C sfdx-cli --strip-components 1
           ./sfdx-cli/install
+    - name: Auth
+      run: |
+         sfdx force:auth:jwt:grant --clientid ${{secrets.CONSUMER_KEY}}  --jwtkeyfile ./server.key \
+          -u ${{secrets.SALESFORCE_DEVHUB_USERNAME}} --setdefaultdevhubusername \
+          -a devhub --instanceurl https://sekartrailhead-dev-ed.my.salesforce.com
      
     - name: Create Project
       run: |
