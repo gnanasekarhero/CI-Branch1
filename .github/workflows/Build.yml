@@ -16,7 +16,8 @@ jobs:
           ./sfdx-cli/install
     - name: Auth
       run: |
-         sfdx force:auth:jwt:grant --clientid ${{secrets.CONSUMER_KEY}} -u sekar@trailhead.com --jwtkeyfile ${{secrets.SERVER}}  --setdefaultdevhubusername -a devhub --instanceurl https://sekartrailhead-dev-ed.my.salesforce.com
+         echo "${SERVER}" > server.key
+         sfdx force:auth:jwt:grant --clientid ${{secrets.CONSUMER_KEY}} -u sekar@trailhead.com --jwtkeyfile server.key  --setdefaultdevhubusername -a devhub --instanceurl https://sekartrailhead-dev-ed.my.salesforce.com
      
     - name: Create Project
       run: |
