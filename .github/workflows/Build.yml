@@ -19,7 +19,7 @@ jobs:
       run: |
         sfdx force:project:create -n Pro -s Sekar
     - name: Create Project
-       run:|
+      run: |
          cd Pro
          sfdx force:org:create adminEmail=gnanasekar.manoharan@email.com edition=Developer \
           username=ADMIN@Gnanasekar.com
