@@ -15,11 +15,14 @@ jobs:
           tar xJf sfdx-linux-amd64.tar.xz -C sfdx-cli --strip-components 1
           ./sfdx-cli/install
      
-    - name: Authenticate DevHub
+    - name: Create Project
       run: |
         sfdx force:project:create -n Pro -s Sekar
-
-
+    - name: Create Project
+       run:|
+         cd Pro
+         sfdx force:org:create adminEmail=gnanasekar.manoharan@email.com edition=Developer \
+          username=ADMIN@Gnanasekar.com
       
 
    
